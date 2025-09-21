@@ -1,5 +1,6 @@
 const db = require('../config/db');
 
+
 class Campanha {
     constructor(cd_campanha, nome_campanha, meta_arrecadacao, inicio, fim) {
         this.cd_campanha = cd_campanha;
