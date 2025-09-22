@@ -1,0 +1,425 @@
+
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Instituto | Doe Alimentos — Transforme Fome em Esperança</title>
+  <meta name="description" content="Instituto de Doação de Alimentos — captação de doações, voluntários e prestação de contas transparente." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍲</text></svg>">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#f6f7fb; --card:#ffffff; --muted:#6b7280; --text:#0f172a;
+      --accent:#16a34a; --accent-2:#0ea5e9; --danger:#ef4444; --glass: rgba(255,255,255,0.6);
+      --shadow: 0 8px 30px rgba(16,24,40,0.06);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;color:var(--text);background:linear-gradient(180deg,#f8fafc 0%, #f1f5f9 100%);}
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:1150px;margin:0 auto;padding:0 20px}
+    header{backdrop-filter:saturate(140%) blur(6px);position:sticky;top:0;z-index:60;background:rgba(255,255,255,0.75);border-bottom:1px solid #e6eef7}
+    nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+    .logo{display:flex;align-items:center;gap:12px;font-weight:800}
+    .logo .icon{width:40px;height:40px;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;color:white;font-weight:800}
+    .menu{display:flex;gap:18px;align-items:center}
+    .menu a{color:var(--text);font-weight:600}
+    .btn-primary{background:linear-gradient(90deg,var(--accent),#22c55e);color:#052014;padding:10px 16px;border-radius:10px;font-weight:700;box-shadow:0 8px 20px rgba(34,197,94,0.15)}
+    .btn-outline{padding:8px 12px;border-radius:10px;border:1px solid #e6eef7;color:var(--text)}
+    .hero{padding:64px 0;display:grid;grid-template-columns:1fr .95fr;gap:32px;align-items:center}
+    .hero-left h1{font-size:clamp(28px,4vw,44px);line-height:1.02;margin:0 0 12px}
+    .muted{color:var(--muted)}
+    .card{background:var(--card);border-radius:14px;padding:20px;box-shadow:var(--shadow);border:1px solid rgba(15,23,42,0.04)}
+    .kpis{display:flex;gap:12px;margin-top:14px}
+    .kpi{padding:14px;border-radius:10px;background:#f8fafc;border:1px solid rgba(15,23,42,0.03);text-align:center;min-width:120px}
+    .kpi strong{display:block;font-size:20px}
+    .hero-right .hero-img{width:100%;aspect-ratio:16/11;background:#e6eef7 url('https://images.unsplash.com/photo-1603145735332-9a3f1f7a0b4a?q=80&w=1400&auto=format&fit=crop') center/cover;border-radius:12px;border:1px solid rgba(15,23,42,0.04)}
+    .section{padding:48px 0;border-top:1px solid rgba(15,23,42,0.04)}
+    h2{margin:0 0 10px;font-size:clamp(20px,2.2vw,28px)}
+    .grid{display:grid;gap:18px}
+    .three-cols{grid-template-columns:repeat(3,1fr)}
+    .two-cols{grid-template-columns:repeat(2,1fr)}
+    .donation-card{display:flex;flex-direction:column;gap:10px;padding:18px;border-radius:12px}
+    .ico{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800}
+    .vol-form input,.vol-form textarea,.donate-form input{width:100%;padding:12px;border-radius:8px;border:1px solid #e6eef7;background:white}
+    .donate-actions{display:flex;gap:10px;flex-wrap:wrap}
+    .faq details{background:#fff;padding:14px;border-radius:10px;border:1px solid rgba(15,23,42,0.04)}
+    .testimonial{display:flex;gap:12px;align-items:flex-start}
+    .avatar{width:56px;height:56px;border-radius:8px;background:#f1f5f9}
+    footer{padding:28px 0;margin-top:24px;color:var(--muted)}
+    .whats{position:fixed;right:18px;bottom:18px;z-index:80}
+    .whats a{display:flex;align-items:center;gap:10px;background:#25d366;color:#04210f;border-radius:999px;padding:12px 16px;font-weight:800;box-shadow:0 12px 30px rgba(37,211,102,0.18)}
+    @media(max-width:980px){
+      .hero{grid-template-columns:1fr;gap:18px;padding:32px 0}
+      .three-cols{grid-template-columns:1fr 1fr}
+      .menu{display:none}
+      header{padding:0 20px}
+    }
+    @media(max-width:520px){
+      .three-cols{grid-template-columns:1fr}
+      .two-cols{grid-template-columns:1fr}
+      .kpis{flex-direction:column}
+    }
+    /* small helpers */
+    .muted-sm{color:var(--muted);font-size:14px}
+    .pill{display:inline-block;background:#f1f5f9;padding:6px 10px;border-radius:999px;font-weight:700;color:var(--accent)}
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="wrap">
+      <nav>
+        <div class="logo">
+          <div class="icon">IA</div>
+          <div>
+            <div style="font-weight:800">Instituto DoeAlimentos</div>
+            <div style="font-size:12px;color:var(--muted)">Transforme Fome em Esperança</div>
+          </div>
+        </div>
+
+        <div class="menu">
+          <a href="#instituto">O Instituto</a>
+          <a href="#como-ajudar">Como Ajudar</a>
+          <a href="#voluntariado">Voluntariado</a>
+          <a href="#prestacao">Prestação de Contas</a>
+          <a href="#contato">Contato</a>
+          <a class="btn-primary" href="#doar">Doe Agora</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero wrap">
+      <div class="hero-left">
+        <div class="pill">Ação Imediata • Transparência Total</div>
+        <h1>Transforme fome em <span style="color:var(--accent)">esperança</span></h1>
+        <p class="muted">Cada doação se transforma em alimento, cuidado e dignidade para famílias em situação de vulnerabilidade. Trabalho com logística local, voluntários e prestação de contas pública.</p>
+        <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap">
+          <a class="btn-primary" href="#doar">Quero Doar</a>
+          <a class="btn-outline" href="#voluntariado">Quero Ser Voluntário</a>
+          <a class="btn-outline" href="#prestacao">Ver Prestação de Contas</a>
+        </div>
+
+        <div class="kpis">
+          <div class="kpi">
+            <strong id="k-doados">--</strong>
+            <span class="muted">Kg distribuídos</span>
+          </div>
+          <div class="kpi">
+            <strong id="k-familias">--</strong>
+            <span class="muted">Famílias ajudadas</span>
+          </div>
+          <div class="kpi">
+            <strong id="k-volunt">--</strong>
+            <span class="muted">Voluntários ativos</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="card hero-img" aria-hidden="true"></div>
+        <div style="margin-top:12px;display:flex;gap:12px">
+          <div class="card" style="flex:1">
+            <strong>Campanha Atual</strong>
+            <p class="muted-sm" style="margin-top:8px">Arrecadação para cestas básicas — meta: 5.000 cestas.</p>
+            <div style="height:10px;background:#e6eef7;border-radius:999px;margin-top:12px;overflow:hidden">
+              <div id="progress" style="width:40%;height:100%;background:linear-gradient(90deg,var(--accent),#60a5fa)"></div>
+            </div>
+            <div style="margin-top:12px;display:flex;gap:8px">
+              <a class="btn-primary" href="#doar">Contribuir</a>
+              <a class="btn-outline" href="#pontocoleta">Pontos de Coleta</a>
+            </div>
+          </div>
+          <div class="card" style="min-width:160px;display:flex;flex-direction:column;gap:8px;align-items:flex-start;justify-content:center">
+            <strong>Transparência</strong>
+            <p class="muted-sm">Relatórios e comprovantes atualizados mensalmente</p>
+            <a class="btn-outline" href="#prestacao">Ver relatórios</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- O INSTITUTO -->
+    <section id="instituto" class="section wrap">
+      <div class="card">
+        <div style="display:flex;gap:18px;align-items:center;flex-wrap:wrap">
+          <div style="flex:1">
+            <h2>Quem somos</h2>
+            <p class="muted">O Instituto DoeAlimentos é uma organização sem fins lucrativos dedicada a reduzir a insegurança alimentar em comunidades vulneráveis. Atuamos com arrecadação, logística de distribuição e acompanhamento social das famílias atendidas.</p>
+            <ul class="muted-sm" style="margin-top:12px">
+              <li><strong>Missão:</strong> garantir alimentação digna e contínua</li>
+              <li><strong>Visão:</strong> comunidade saudável e autossuficiente</li>
+              <li><strong>Valores:</strong> transparência, dignidade, rapidez</li>
+            </ul>
+          </div>
+          <div style="flex-basis:320px">
+            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=900&auto=format&fit=crop" alt="Equipe ajudando" style="width:100%;border-radius:12px;border:1px solid rgba(15,23,42,0.04)"/>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMO AJUDAR -->
+    <section id="como-ajudar" class="section wrap">
+      <h2>Como ajudar</h2>
+      <p class="muted">Escolha a forma que faz mais sentido para você: doação financeira, doação de alimentos ou tornar-se um doador mensal.</p>
+
+      <div class="grid three-cols" style="margin-top:18px">
+        <div class="donation-card card">
+          <div style="display:flex;gap:12px;align-items:center">
+            <div class="ico">R$</div>
+            <div>
+              <strong>Doação Financeira</strong>
+              <div class="muted-sm">Pix, cartão ou boleto — usamos para comprar alimentos e logística.</div>
+            </div>
+          </div>
+          <div style="margin-top:8px">
+            <div class="muted-sm">PIX</div>
+            <div style="font-weight:700;margin-top:6px">PIX: <span id="pix-key">SEU_PIX_KEY</span> <!-- AJUSTAR --></div>
+          </div>
+          <div style="margin-top:8px" class="donate-actions">
+            <a class="btn-primary" href="#doar" onclick="openDonate('financeiro')">Doar agora</a>
+            <a class="btn-outline" href="mailto:SEU_EMAIL?subject=Quero%20doar%20financeiro">Preciso de info</a>
+          </div>
+        </div>
+
+        <div class="donation-card card">
+          <div style="display:flex;gap:12px;align-items:center">
+            <div class="ico">🍎</div>
+            <div>
+              <strong>Doação de Alimentos</strong>
+              <div class="muted-sm">Entregue em pontos de coleta ou organize uma coleta com a sua empresa.</div>
+            </div>
+          </div>
+          <div style="margin-top:8px">
+            <div class="muted-sm">Pontos de coleta</div>
+            <ul class="muted-sm" style="margin-top:6px">
+              <li>Endereço A — Segunda a Sexta, 9h–17h</li>
+              <li>Endereço B — Sábado, 9h–13h</li>
+            </ul>
+          </div>
+          <div style="margin-top:8px" class="donate-actions">
+            <a class="btn-primary" href="#pontocoleta">Ver pontos</a>
+            <a class="btn-outline" href="mailto:SEU_EMAIL?subject=Doação%20de%20alimentos">Agendar coleta</a>
+          </div>
+        </div>
+
+        <div class="donation-card card">
+          <div style="display:flex;gap:12px;align-items:center">
+            <div class="ico">🔁</div>
+            <div>
+              <strong>Doação Recorrente</strong>
+              <div class="muted-sm">Contribua mensalmente e garanta segurança alimentar contínua.</div>
+            </div>
+          </div>
+          <div style="margin-top:8px" class="muted-sm">
+            Defina o valor: R$30 / R$60 / R$120 mensais
+          </div>
+          <div style="margin-top:8px" class="donate-actions">
+            <a class="btn-primary" href="#doar" onclick="openDonate('recorrente')">Quero doar mensalmente</a>
+            <a class="btn-outline" href="mailto:SEU_EMAIL?subject=Doação%20Recorrente">Falar com equipe</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VOLUNTARIADO -->
+    <section id="voluntariado" class="section wrap">
+      <h2>Voluntariado</h2>
+      <p class="muted">Doe seu tempo: logística, distribuição, triagem ou comunicação. Preencha o formulário e nossa equipe entrará em contato.</p>
+
+      <div class="card" style="margin-top:18px">
+        <form id="volForm" class="vol-form" onsubmit="submitVol(event)">
+          <div class="two-cols" style="grid-template-columns:1fr 1fr">
+            <div>
+              <label class="muted-sm">Nome</label>
+              <input type="text" id="v-name" required placeholder="Seu nome completo" />
+            </div>
+            <div>
+              <label class="muted-sm">WhatsApp</label>
+              <input type="tel" id="v-whats" required placeholder="+55 11 9XXXX-XXXX" />
+            </div>
+          </div>
+          <div style="margin-top:12px">
+            <label class="muted-sm">Cidade / Bairro</label>
+            <input id="v-place" placeholder="Ex: Rio de Janeiro - Barra" />
+          </div>
+          <div style="margin-top:12px">
+            <label class="muted-sm">Disponibilidade</label>
+            <input id="v-avail" placeholder="Ex: Sábados 8h-12h / Seg-Sex 18h-20h" />
+          </div>
+          <div style="margin-top:12px">
+            <label class="muted-sm">Como quer ajudar?</label>
+            <textarea id="v-msg" rows="4" placeholder="Logística, triagem, distribuição, comunicação..."></textarea>
+          </div>
+
+          <div style="margin-top:12px;display:flex;gap:10px">
+            <button class="btn-primary" type="submit">Quero ser voluntário</button>
+            <a class="btn-outline" href="mailto:SEU_EMAIL?subject=Quero%20ser%20voluntário">Prefiro e‑mail</a>
+          </div>
+          <p class="muted-sm" style="margin-top:10px">Ao enviar, concorda em ser contactado via WhatsApp para coordenação.</p>
+        </form>
+      </div>
+    </section>
+
+    <!-- PRESTAÇÃO DE CONTAS -->
+    <section id="prestacao" class="section wrap">
+      <h2>Prestação de contas</h2>
+      <p class="muted">Transparência é nossa prioridade. Aqui você encontra relatórios, comprovantes de entrega e planilhas consolidadas.</p>
+
+      <div class="grid" style="margin-top:18px;grid-template-columns:1fr 1fr;gap:18px">
+        <div class="card">
+          <strong>Relatórios Mensais</strong>
+          <p class="muted-sm" style="margin-top:8px">Downloads com total de arrecadação, despesas e distribuição por região.</p>
+          <ul class="muted-sm" style="margin-top:10px">
+            <li><a href="#" download>Relatório - Julho 2025 (PDF)</a></li>
+            <li><a href="#" download>Relatório - Junho 2025 (PDF)</a></li>
+            <li><a href="#" download>Planilha Consolidada (XLSX)</a></li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <strong>Indicadores</strong>
+          <div style="margin-top:8px">
+            <div class="muted-sm">Última atualização: <strong id="last-update">--/--/----</strong></div>
+            <div style="margin-top:12px">
+              <div class="muted-sm">Arrecadação total</div>
+              <div style="font-weight:800;font-size:20px" id="ind-arrecad">R$ --</div>
+            </div>
+            <div style="margin-top:12px">
+              <div class="muted-sm">Cestas entregues</div>
+              <div style="font-weight:800;font-size:20px" id="ind-cestas">--</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEPOIMENTOS -->
+    <section id="depoimentos" class="section wrap">
+      <h2>Histórias reais</h2>
+      <p class="muted">Depoimentos de quem recebeu e de quem ajuda. Essas vozes mostram o impacto direto do seu apoio.</p>
+
+      <div class="grid" style="margin-top:18px;grid-template-columns:1fr 1fr;gap:18px">
+        <div class="card testimonial">
+          <div class="avatar" style="background-image:url('https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800&auto=format&fit=crop');background-size:cover"></div>
+          <div>
+            <strong>Mariana, beneficiada</strong>
+            <div class="muted-sm">"Recebi a cesta quando não tinha como alimentar meus filhos. A equipe foi humana e rápida."</div>
+          </div>
+        </div>
+
+        <div class="card testimonial">
+          <div class="avatar" style="background-image:url('https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?q=80&w=800&auto=format&fit=crop');background-size:cover"></div>
+          <div>
+            <strong>Lucas, voluntário</strong>
+            <div class="muted-sm">"Participar me trouxe propósito. A coordenação é profissional e transparente."</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section id="doar" class="section wrap">
+      <div class="card" style="display:flex;align-items:center;gap:20px;flex-wrap:wrap;justify-content:space-between">
+        <div style="flex:1;min-width:260px">
+          <h2>Pronto para transformar vidas?</h2>
+          <p class="muted-sm">Doe agora e acompanhe onde cada real foi aplicado.</p>
+        </div>
+        <div style="display:flex;gap:12px;align-items:center">
+          <a class="btn-primary" href="#doar" onclick="openDonate('financeiro')">Doar agora</a>
+          <a class="btn-outline" href="#voluntariado">Quero ser voluntário</a>
+          <a class="btn-outline" href="https://wa.me/SEU_WHATS?text=Quero%20ajudar%20agora" target="_blank">Falar no WhatsApp</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTATO / RODAPÉ -->
+    <footer id="contato" class="wrap">
+      <div style="display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap">
+        <div style="flex:1;min-width:220px">
+          <strong>Instituto DoeAlimentos</strong>
+          <div class="muted-sm" style="margin-top:8px">Endereço: Rua Exemplo, 123 — Cidade — Estado</div>
+          <div class="muted-sm" style="margin-top:6px">CNPJ: XX.XXX.XXX/0001-XX</div>
+        </div>
+        <div style="flex-basis:300px">
+          <strong>Contato</strong>
+          <div class="muted-sm" style="margin-top:8px">E-mail: <a href="mailto:SEU_EMAIL">SEU_EMAIL</a></div>
+          <div class="muted-sm" style="margin-top:6px">WhatsApp: <a href="https://wa.me/SEU_WHATS" target="_blank">SEU_WHATS</a></div>
+          <div style="margin-top:10px"><a href="#prestacao" class="muted-sm">Política de Privacidade</a> • <a href="#prestacao" class="muted-sm">Termos</a></div>
+        </div>
+      </div>
+
+      <div style="margin-top:18px;border-top:1px solid rgba(15,23,42,0.04);padding-top:16px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap">
+        <div class="muted-sm">© <span id="year"></span> Instituto DoeAlimentos — Todos os direitos reservados.</div>
+        <div style="display:flex;gap:12px">
+          <a class="muted-sm" href="#">Instagram</a>
+          <a class="muted-sm" href="#">Facebook</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- WHATS BUTTON -->
+    <div class="whats">
+      <a href="https://wa.me/SEU_WHATS?text=Quero%20ajudar%20agora" target="_blank" aria-label="Falar no WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16"><path d="M13.601 2.326A7.854 7.854 0 0 0 8.04.003 7.994 7.994 0 0 0 .26 12.59L0 16l3.497-.915a7.994 7.994 0 0 0 11.9-6.86 7.86 7.86 0 0 0-1.796-5.899zM8.04 14.534a6.48 6.48 0 0 1-3.3-.9l-.236-.14-1.957.512.523-1.91-.155-.25a6.49 6.49 0 1 1 5.124 2.689zm3.55-4.844c-.194-.097-1.15-.566-1.328-.63-.178-.065-.308-.097-.438.097-.13.194-.503.63-.617.758-.113.13-.226.146-.42.05-.194-.097-.82-.302-1.562-.963a5.82 5.82 0 0 1-1.079-1.33c-.113-.194-.012-.299.085-.396.087-.086.194-.226.291-.339.097-.113.129-.194.194-.323.065-.13.033-.242-.017-.339-.05-.097-.438-1.056-.6-1.448-.16-.386-.323-.334-.438-.34l-.374-.007c-.12 0-.339.05-.516.242-.178.194-.678.662-.678 1.615 0 .952.695 1.873.792 2.003.097.13 1.37 2.09 3.32 2.933.465.2.828.319 1.11.41.466.148.89.127 1.226.077.374-.056 1.15-.47 1.313-.924.162-.453.162-.84.113-.924-.05-.081-.178-.129-.372-.226z"/></svg>
+        <span>Falar no WhatsApp</span>
+      </a>
+    </div>
+  </main>
+
+  <script>
+    // Basic placeholders / dynamic numbers (replace with real data fetch)
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('last-update').textContent = (new Date()).toLocaleDateString();
+
+    // Demo stats - REPLACE with real API or server-side rendered numbers
+    const demoStats = { kg: "23.450", familias: "1.874", volunt: "128", arrecad: "R$ 123.450", cestas: "2.320", progress: 40 };
+    document.getElementById('k-doados').textContent = demoStats.kg;
+    document.getElementById('k-familias').textContent = demoStats.familias;
+    document.getElementById('k-volunt').textContent = demoStats.volunt;
+    document.getElementById('ind-arrecad').textContent = demoStats.arrecad;
+    document.getElementById('ind-cestas').textContent = demoStats.cestas;
+    document.getElementById('progress').style.width = demoStats.progress + '%';
+
+    // Donate modal simulation (simple)
+    function openDonate(type){
+      // type: 'financeiro' | 'recorrente' etc.
+      // For now: scroll to section and focus (later you can open a modal or link to payment provider)
+      const target = document.getElementById('doar');
+      target.scrollIntoView({behavior:'smooth', block:'center'});
+      alert('Abrir fluxo de pagamento para: ' + type + '\n-- Substitua isso pela integração com gateway (Pagar.me, Gerencianet, Stripe, Yapay, etc.)');
+    }
+
+    // Volunteer form submit (example: replace with endpoint)
+    function submitVol(e){
+      e.preventDefault();
+      const name = document.getElementById('v-name').value.trim();
+      const whats = document.getElementById('v-whats').value.trim();
+      const place = document.getElementById('v-place').value.trim();
+      const avail = document.getElementById('v-avail').value.trim();
+      const msg = document.getElementById('v-msg').value.trim();
+      // Basic validation
+      if(!name || !whats){ alert('Preencha nome e WhatsApp'); return; }
+      // Here you should POST to your server / Zapier / Formspree / Google Sheets
+      console.log({name,whats,place,avail,msg});
+      alert('Obrigado, ' + name + '! Recebemos sua inscrição. Em breve entraremos em contato pelo WhatsApp.');
+      // reset
+      document.getElementById('volForm').reset();
+    }
+
+    // Small helper for external links
+    (function enhanceLinks(){
+      const links = document.querySelectorAll('a[href^="#"]');
+      links.forEach(a => a.addEventListener('click', (e)=>{
+        const href = a.getAttribute('href');
+        if(href === '#') e.preventDefault();
+      }));
+    })();
+  </script>
+</body>
+</html>
