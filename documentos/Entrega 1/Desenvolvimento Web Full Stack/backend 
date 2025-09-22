@@ -1,0 +1,117 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "nodemon": "^3.1.4"
+  }
+}
+const express = require('express');
+const cors = require('cors');
+const volunteersRoutes = require('./routes/volunteers');
+
+const app = express();
+const PORT = process.env.PORT || 3001;
+
+// Middlewares
+app.use(express.json());
+app.use(cors());
+
+// Conecta as rotas
+app.use('/api/volunteers', volunteersRoutes);
+
+app.listen(PORT, () => {
+    console.log(`Servidor rodando em http://localhost:${PORT}`);
+});
+let volunteers = []; // Simula um banco de dados em memória
+
+// CREATE: Adicionar um novo voluntário
+exports.createVolunteer = (req, res) => {
+    const { name, whatsapp, place, availability, message } = req.body;
+
+    if (!name || !whatsapp) {
+        return res.status(400).json({ message: 'Nome e WhatsApp são obrigatórios.' });
+    }
+
+    const newVolunteer = {
+        id: volunteers.length + 1,
+        name,
+        whatsapp,
+        place,
+        availability,
+        message,
+        timestamp: new Date()
+    };
+
+    volunteers.push(newVolunteer);
+    console.log('Novo voluntário cadastrado:', newVolunteer);
+    res.status(201).json(newVolunteer);
+};
+
+// READ: Listar todos os voluntários
+exports.getVolunteers = (req, res) => {
+    res.status(200).json(volunteers);
+};
+
+// READ: Buscar voluntário por ID
+exports.getVolunteerById = (req, res) => {
+    const id = parseInt(req.params.id);
+    const volunteer = volunteers.find(v => v.id === id);
+
+    if (!volunteer) {
+        return res.status(404).json({ message: 'Voluntário não encontrado.' });
+    }
+    res.status(200).json(volunteer);
+};
+
+// UPDATE: Atualizar dados de um voluntário
+exports.updateVolunteer = (req, res) => {
+    const id = parseInt(req.params.id);
+    const volunteer = volunteers.find(v => v.id === id);
+
+    if (!volunteer) {
+        return res.status(404).json({ message: 'Voluntário não encontrado.' });
+    }
+
+    const { name, whatsapp, place, availability, message } = req.body;
+    volunteer.name = name || volunteer.name;
+    volunteer.whatsapp = whatsapp || volunteer.whatsapp;
+    volunteer.place = place || volunteer.place;
+    volunteer.availability = availability || volunteer.availability;
+    volunteer.message = message || volunteer.message;
+
+    res.status(200).json(volunteer);
+};
+
+// DELETE: Remover um voluntário
+exports.deleteVolunteer = (req, res) => {
+    const id = parseInt(req.params.id);
+    const initialLength = volunteers.length;
+    volunteers = volunteers.filter(v => v.id !== id);
+
+    if (volunteers.length === initialLength) {
+        return res.status(404).json({ message: 'Voluntário não encontrado.' });
+    }
+    res.status(200).json({ message: 'Voluntário removido com sucesso.' });
+};
+const express = require('express');
+const router = express.Router();
+const volunteersController = require('../controllers/volunteersController');
+
+// Rotas da API de voluntários
+router.post('/', volunteersController.createVolunteer);
+router.get('/', volunteersController.getVolunteers);
+router.get('/:id', volunteersController.getVolunteerById);
+router.put('/:id', volunteersController.updateVolunteer);
+router.delete('/:id', volunteersController.deleteVolunteer);
+
+module.exports = router;
