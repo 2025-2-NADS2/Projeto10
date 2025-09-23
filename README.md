@@ -14,8 +14,7 @@ Vide tutoriais do PI.
 
 ## Grupo 10
 
-## Integrantes: <a href="https://www.linkedin.com/in/victorbarq/">Bianca Morais</a>, <a href="https://www.linkedin.com/in/victorbarq/">Me. Saitama</a>, <a href="[[https://www.linkedin.com/in/victorbarq](https://www.linkedin.com/in/murillo-lueders-azeredo-diniz-costa-07638a301/)/">Dr. Strange](Murillo Lueders Azeredo DIniz Costa/)</a>, <a href="https://www.linkedin.com/in/victorbarq/">Me. Yoda</a>, <a href="https://www.linkedin.com/in/victorbarq/">Dr. Gero</a>
-
+## Integrantes: <a href="https://www.linkedin.com/in/franciscodesouzaescobar/">Francisco de Souza Escobar</a>, <a href="https://www.linkedin.com/in/victorbarq/">Victor Bruno Alexander Rosetti de Quiroz</a>, <a href="https:[//www.linkedin.com/in/victorbarq/">Murillo Lueders](https://www.linkedin.com/in/murillo-lueders-azeredo-diniz-costa-07638a301/)</a>, <a href="https://www.linkedin.com/in/victorbarq/">Ronaldo Araujo Pinto</a>, <a href="https://www.linkedin.com/in/victorbarq/">osé Carlos Buesso Jr</a>
 
 ## Professores Orientadores:  <a href="https://www.linkedin.com/in/franciscodesouzaescobar/">Francisco de Souza Escobar</a>, <a href="https://www.linkedin.com/in/victorbarq/">Victor Bruno Alexander Rosetti de Quiroz</a>, <a href="https://www.linkedin.com/in/victorbarq/">Eduardo Savino Gomes</a>, <a href="https://www.linkedin.com/in/victorbarq/">Ronaldo Araujo Pinto</a>, <a href="https://www.linkedin.com/in/victorbarq/">osé Carlos Buesso Jr</a>
 
