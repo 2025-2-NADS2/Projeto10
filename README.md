@@ -22,7 +22,7 @@ Vide tutoriais do PI.
 ## Descrição
 
 <p align="center">
-<img src="<img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.facebook.com%2Falmainstituto.oficial%2F&psig=AOvVaw3LpHp29OkRULahwHcfc2Q7&ust=1759011719299000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCOCs7_28948DFQAAAAAdAAAAABAs"
+<img src="<img src="
   Game by <a href="http://www.nyphotographic.com/">Nick Youngson</a> <a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a> <a href="http://pix4free.org/">Pix4free</a>
 </p>
 
