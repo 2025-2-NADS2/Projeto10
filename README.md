@@ -22,7 +22,9 @@ Vide tutoriais do PI.
 ## Descrição
 <p align="center">
 <img src="https://pix4free.org/assets/library/2021-01-20/originals/game.jpg" alt="NOME DO JOGO" border="0">
-  Game by <a href="https://www.google.com/search?sca_esv=eaab408515b938ef&rlz=1C1RXQR_pt-PTBR1184BR1184&sxsrf=AE3TifN3IPKwGABRw3bQv7MtxVFi3uLKdA:1762384823601&udm=2&fbs=AIIjpHydJdUtNKrM02hj0s4nbm4yAFb4PvhjIUcDtaFHkK_tyrc19Fy18ZmQI8YdvzhUzM1Vyl4PPVBgowtMF5a_n0jV9qpPa_srJTJKDV4N6TqrJ4MeCwIdMPrddAfeXxIuBjYFQ-71PabdUD_Rd6nUQuMqiXcfKVOhOLbHipv9b1ilCcr6_T2YoGnImdnSi8PYdcWruhpA7dhtUFFL1Fd3f8DVflbnXQ&q=instituto+alma&sa=X&sqi=2&ved=2ahUKEwjX2_iKk9yQAxWFHbkGHWRuBAYQtKgLegQIFxAB&biw=1366&bih=641&dpr=1#vhid=YkR98XTCK9BBpM&vssid=mosaic>Enzo Minardi, Murillo Lueders, Fabricio Marques, Guilherme Harada</a> <a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a> <a href="https://www.google.com/search?sca_esv=eaab408515b938ef&rlz=1C1RXQR_pt-PTBR1184BR1184&sxsrf=AE3TifN3IPKwGABRw3bQv7MtxVFi3uLKdA:1762384823601&udm=2&fbs=AIIjpHydJdUtNKrM02hj0s4nbm4yAFb4PvhjIUcDtaFHkK_tyrc19Fy18ZmQI8YdvzhUzM1Vyl4PPVBgowtMF5a_n0jV9qpPa_srJTJKDV4N6TqrJ4MeCwIdMPrddAfeXxIuBjYFQ-71PabdUD_Rd6nUQuMqiXcfKVOhOLbHipv9b1ilCcr6_T2YoGnImdnSi8PYdcWruhpA7dhtUFFL1Fd3f8DVflbnXQ&q=instituto+alma&sa=X&sqi=2&ved=2ahUKEwjX2_iKk9yQAxWFHbkGHWRuBAYQtKgLegQIFxAB&biw=1366&bih=641&dpr=1#vhid=YkR98XTCK9BBpM&vssid=mosaic</a>
+  Game by <a href="http://www.nyphotographic.com/">Enzo Minardi, Murillo Lueders, Fabricio Marques, Guilherme Harada</a> <a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a> <a href="http://pix4free.org/">Pix4free</a>
+</p>
+
 </p>
 
 
