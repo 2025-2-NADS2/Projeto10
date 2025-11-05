@@ -27,12 +27,11 @@ Vide tutoriais do PI.
 </p>
 
 
-De um a dois parágrafos sobre o que é seu projeto e o que ele faz.
+Estamos desenvolvendo um site para uma ONG com o objetivo de aproximar as pessoas do trabalho realizado pela instituição. A nova plataforma vai permitir que visitantes conheçam melhor as causas que a ONG apoia, acompanhem campanhas ativas e façam doações de forma simples, rápida e segura.
+
+Mais do que facilitar o apoio, o site foi pensado para promover transparência e confiança. Cada doação poderá ser acompanhada de perto, mostrando como e onde os recursos estão sendo aplicados. Dessa forma, queremos fortalecer o vínculo entre a ONG e seus apoiadores, incentivando mais pessoas a participarem e contribuírem para transformar vidas.
 <br><br>
-Meu projeto ajuda estudantes FECAP a configurarem seus githubs.
-<br><br>
-May the force be with you!
-<br><br>
+
 
 ## 🛠 Estrutura de pastas
 
