@@ -14,7 +14,7 @@ Vide tutoriais do PI.
 
 ## Grupo 10
 
-## Integrantes: <a href="https://www.linkedin.com/in/bianca-morais-655464212/">Bianca Morais</a>, <ahref="https://www.linkedin.com/in/bianca-morais-655464212/">Victor Bruno Alexander Rosetti de Quiroz</a>, <a href="https://www.linkedin.com/in/murillo-lueders-azeredo-diniz-costa-07638a301/">Murillo Lueders</a>, <a href="https://www.linkedin.com/in/victorbarq/">Ronaldo Araujo Pinto</a>, <a href="https://www.linkedin.com/in/victorbarq/">osé Carlos Buesso Jr</a>
+## Integrantes: <a href="https://www.linkedin.com/in/bianca-morais-655464212/">Bianca Morais</a>, <a href="https://www.linkedin.com/in/victorbarq/">Enzo Mancio</a>, <a href="https://www.linkedin.com/in/murillo-lueders-azeredo-diniz-costa-07638a301/">Murillo Lueders</a>, <a href="https://www.linkedin.com/in/victorbarq/">Pedro Cheles </a>
 
 ## Professores Orientadores:  <a href="https://www.linkedin.com/in/franciscodesouzaescobar/">Francisco de Souza Escobar</a>, <a href="https://www.linkedin.com/in/victorbarq/">Victor Bruno Alexander Rosetti de Quiroz</a>, <a href="https://www.linkedin.com/in/victorbarq/">Eduardo Savino Gomes</a>, <a href="https://www.linkedin.com/in/victorbarq/">Ronaldo Araujo Pinto</a>, <a href="https://www.linkedin.com/in/victorbarq/">osé Carlos Buesso Jr</a>
 
