@@ -1,0 +1,31 @@
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import Header from './components/Header';
+import DashboardHeader from './components/DashboardHeader.jsx'; 
+import HomePage from './pages/HomePage';
+import PortalPage from './pages/PortalPage';
+import DoarPage from './pages/DoarPage';
+import RelatoriosPage from './pages/RelatoriosPage';
+import GovernancaPage from './pages/GovernancaPage';
+import DashboardPage from './pages/DashboardPage.jsx'; 
+import AdminPage from './pages/AdminPage';
+import VoluntarioPage from './pages/VoluntarioPage'; 
+
+function App() {
+  return (
+    <div>
+      <Routes>
+        <Route path="/" element={<><Header /><HomePage /></>} />
+        <Route path="/portal" element={<><Header /><PortalPage /></>} />
+        <Route path="/doar" element={<><Header /><DoarPage /></>} />
+        <Route path="/relatorios" element={<><Header /><RelatoriosPage /></>} />
+        <Route path="/governanca" element={<><Header /><GovernancaPage /></>} />
+        <Route path="/dashboard" element={<><DashboardHeader /><DashboardPage /></>} />
+        <Route path="/admin" element={<><DashboardHeader /><AdminPage /></>} />
+        <Route path="/voluntario" element={<><DashboardHeader /><VoluntarioPage /></>} /> {/* <-- LINHA 31 (USA) */}
+      </Routes>
+    </div>
+  );
+}
+
+export default App;
