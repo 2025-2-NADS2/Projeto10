@@ -1,0 +1,324 @@
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+
+const slides = [
+  { 
+    titulo: "SOPA FRATERNA", 
+    texto1: "O Instituto Alma acredita no poder de um prato de comida quente para aquecer o corpo e o coração. Em nossa ação da 'Sopa Fraterna', nossos voluntários se unem em um verdadeiro mutirão de solidariedade. O trabalho começa cedo, com o preparo cuidadoso e o corte de legumes, e segue para o cozimento em grandes panelas, onde cada ingrediente é adicionado com afeto.",
+    texto2: "Esse esforço coletivo se transforma em centenas de refeições nutritivas. A etapa final é a distribuição direta nas comunidades, onde levamos não apenas alimento, mas também conforto, dignidade e a certeza de que ninguém está sozinho. É o amor em forma de comida, nutrindo quem mais precisa.",
+    imagens: [
+      '/documentos/Sopa 16.04.21 011.jpg',
+      '/documentos/Sopa 16.04.21 021.jpg',
+      '/documentos/Sopa 16.04.21 098.jpg',
+      '/documentos/Sopa 16.04.21 130.jpg'
+    ]
+  },
+  { 
+    titulo: "AÇÃO DE PÁSCOA", 
+    texto1: "Nossa Páscoa Solidária: Levando Esperança e Alimento. No verdadeiro espírito da Páscoa, o Instituto Alma mobilizou seus voluntários para uma ação especial de solidariedade.",
+    texto2: "Fomos a campo levar apoio e alegria a comunidades em situação de vulnerabilidade, com um foco duplo: garantir a segurança alimentar das famílias com a distribuição de cestas básicas e celebrar a magia da data com as crianças, que aguardavam ansiosamente por seus ovos de chocolate.",
+    imagens: [
+      '/documentos/pascoa4.jpeg',
+      '/documentos/pascoa2.jpg',
+      '/documentos/pascoa3.jpg',
+      '/documentos/pascoa5.jpeg'
+    ]
+  },
+  { 
+    titulo: "ENTREGA DE CESTAS BÁSICAS", 
+    texto1: "No Instituto Alma, acreditamos que o acesso à alimentação básica é a base da dignidade. Por isso, nossa campanha de cestas básicas é uma ação contínua e vital.",
+    texto2: "Mobilizamos doações e voluntários para a montagem e distribuição de alimentos essenciais não perecíveis. Cada cesta que entregamos é mais do que apenas comida; é a garantia do alimento na mesa, um alívio imediato para famílias inteiras e um ato de profundo respeito.",
+    imagens: [
+      '/documentos/cesta5.jpeg',
+      '/documentos/cesta2.jpeg',
+      '/documentos/cesta3.jpeg',
+      '/documentos/ccesta4.jpeg'
+    ]
+  },
+  { 
+    titulo: "PROJETO MATERNAR", 
+    texto1: "No Instituto Alma, acreditamos que apoiar uma mãe é fortalecer uma família inteira. Por isso, nosso projeto de apoio a mães em vulnerabilidade oferece uma rede de acolhimento e suporte essencial.",
+    texto2: "Focamos na distribuição de itens cruciais para a primeira infância, como fraldas, leite, roupas e kits de higiene. Nosso objetivo, no entanto, vai além do material. Buscamos oferecer escuta, dignidade e o lembrete de que elas não estão sozinhas nessa jornada.",
+    imagens: [
+      '/documentos/maes.jpeg',
+      '/documentos/maes1.jpeg',
+      '/documentos/maes2.jpeg',
+      '/documentos/maes3.jpeg'
+    ]
+  },
+];
+
+const dots = ['#f06678', '#ffc9fc', '#64B5F6', '#6efff1'];
+
+
+function HomePage() {
+  
+
+  const [activeSlide, setActiveSlide] = useState(0); 
+  const slideAtual = slides[activeSlide]; 
+
+
+  return (
+
+    <>
+      <main className="hero-section" id="home">
+        <div className="hero-image-card">
+          <div className="image-placeholder">
+            <img src="/documentos/image.png" alt="Voluntária do Instituto Alma sorrindo" />
+          </div>
+          <div className="color-bars">
+            <div className="bar" style={{ backgroundColor: '#f06678' }}></div>
+            <div className="bar" style={{ backgroundColor: '#ffc9fc' }}></div>
+            <div className="bar" style={{ backgroundColor: '#64B5F6' }}></div>
+            <div className="bar" style={{ backgroundColor: '#6efff1' }}></div>
+          </div>
+        </div>
+        <div className="hero-text">
+          <h1>O Instituto Alma é uma luz de esperança nas comunidades mais esquecidas e vulneráveis da sociedade.</h1>
+        </div>
+      </main>
+
+      <section id="sobre-nos" className="sobre-nos-section">
+        <h2 className="section-title" style={{ display: 'none' }}>Sobre Nós</h2>
+        <div className="thin-bar"></div>
+        <div className="about-container">
+          <div className="about-image-card">
+            <img src="/documentos/Sopa 16.04.21 014.jpg" alt="Foto1" />
+          </div>
+          <div className="about-text-card">
+            <h2>Sobre Nós</h2>
+            <p>O instituto Alma surgiu com a proposta de
+                promover a transformação social através de
+                ações diferenciadas, feitas como objetivo de
+                encantar e proporcionar algo único e especial
+                para a vida das pessoas.</p>
+            <p>O público-alvo são os moradores de comunidades
+                muito carentes esquecidas.</p>
+          </div>
+          <div className="about-image-card">
+            <img src="/documentos/Sopa 16.04.21 040.jpg" alt="Foto2" />
+          </div>
+        </div>
+        <div className="bottom-color-bars">
+            <div className="bottom-bar" style={{ backgroundColor: '#f06678' }}></div>
+            <div className="bottom-bar" style={{ backgroundColor: '#ffc9fc' }}></div>
+            <div className="bottom-bar" style={{ backgroundColor: '#64B5F6' }}></div>
+            <div className="bottom-bar" style={{ backgroundColor: '#6efff1' }}></div>
+            <div className="bottom-bar" style={{ backgroundColor: '#f06678' }}></div>
+            <div className="bottom-bar" style={{ backgroundColor: '#ffc9fc' }}></div>
+            <div className="bottom-bar" style={{ backgroundColor: '#64B5F6' }}></div>
+        </div>
+      </section>
+
+      <section id="atividades" className="atividades-section">
+        <h2 className="section-title">Nossas Atividades</h2>
+        <div className="carousel-container">
+          <div className="carousel-track">
+            
+            <div className="carousel-slide active-slide">
+              <div className="slide-top-bar" style={{ backgroundColor: '#6efff1' }}></div>
+              <div className="slide-content-wrapper">
+                <div className="image-grid">
+                  {slideAtual.imagens.map((imgSrc, index) => (
+                    <div className="grid-image-placeholder" key={index}>
+                      <img src={imgSrc} alt={`${slideAtual.titulo} ${index + 1}`} />
+                    </div>
+                  ))}
+                </div>
+                <div className="description-panel">
+                  <h2>{slideAtual.titulo}</h2>
+                  <div className="description-placeholder">
+                    <p>{slideAtual.texto1}</p>
+                    <p>{slideAtual.texto2}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          
+          <div className="carousel-navigation">
+            {dots.map((cor, index) => (
+              <div 
+                key={index}
+                className={`nav-dot ${activeSlide === index ? 'active-dot' : ''}`} 
+                style={{ backgroundColor: cor }}
+                onClick={() => setActiveSlide(index)}
+              ></div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="transparencia" className="transparencia-section">
+        
+        <h2 className="section-title">Portal de Transparência</h2>
+        <div className="thin-bar" style={{ backgroundColor: '#6efff1' }}></div>
+        
+        <div className="transparencia-wrapper">
+            
+            <div className="transparencia-col-left">
+                
+                <div className="info-card">
+                    <p>Acreditamos na transparência total. Para que você acompanhe de perto como sua generosidade se transforma em ação, disponibilizamos nossos relatórios de atividades e financeiros.</p>
+                    <Link to="/relatorios" className="btn btn-red">Saiba Mais</Link>
+                </div>
+                
+                <div className="info-card">
+                    <p>O Instituto Alma é feito por pessoas comprometidas com nossa missão. Conheça aqui nossos sócios, fundadores e a diretoria responsável pela gestão e governança da organização.</p>
+                    <Link to="/governanca" className="btn btn-red">Saiba Mais</Link>
+                </div>
+
+            </div>
+            
+            <div className="transparencia-col-right">
+                
+                <div className="info-card">
+                    <h3>Sua Confiança é Importante par Nós</h3>
+                    <p>No Instituto Alma, a transparência é o alicerce do nosso trabalho. Acreditamos que prestar contas de forma clara é fundamental para honrar a generosidade de quem nos apoia.</p>
+                    <p>Temos um compromisso firme com a gestão responsável de todos os recursos. Cada doação recebida é registrada e direcionada com o máximo cuidado para nossas ações, seja na compra de alimentos para a Sopa Fraterna, na montagem das cestas básicas ou no apoio às mães.</p>
+                    <p>Seu apoio nos permite levar dignidade e esperança, e é por isso que fazemos questão de sermos transparentes sobre como sua contribuição se transforma em ajuda real.</p>
+                </div>
+
+            </div>
+            
+        </div>
+
+        <div className="bottom-color-bars">
+            <div className="bottom-bar" style={{ backgroundColor: '#f06678' }}></div>
+            <div className="bottom-bar" style={{ backgroundColor: '#ffc9fc' }}></div>
+            <div className="bottom-bar" style={{ backgroundColor: '#64B5F6' }}></div>
+            <div className="bottom-bar" style={{ backgroundColor: '#6efff1' }}></div>
+            <div className="bottom-bar" style={{ backgroundColor: '#f06678' }}></div>
+            <div className="bottom-bar" style={{ backgroundColor: '#ffc9fc' }}></div>
+            <div className="bottom-bar" style={{ backgroundColor: '#64B5F6' }}></div>
+        </div>
+        
+      </section>
+
+      <section id="eventos" className="eventos-section">
+        
+        <h2 className="section-title">Se Agende Para Participar Dos Nossos Eventos</h2>
+        <div className="thin-bar" style={{ backgroundColor: '#6efff1' }}></div>
+
+        <div className="eventos-wrapper">
+
+            <div className="eventos-calendario">
+                <h3>Dezembro 2025</h3>
+                <table className="calendario-table">
+                    <thead>
+                        <tr>
+                            <th>Segunda-Feira</th>
+                            <th>Terça-Feira</th>
+                            <th>Quarta-Feira</th>
+                            <th>Quinta-Feira</th>
+                            <th>Sexta-Feira</th>
+                            <th>Sábado</th>
+                            <th>Domingo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td></tr>
+                        <tr><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td></tr>
+                        <tr><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td></tr>
+                        <tr><td>22</td><td className="dia-evento"><span>23</span></td><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td></tr>
+                        <tr><td>29</td><td>30</td><td>31</td><td className="dia-desabilitado">1</td><td className="dia-desabilitado">2</td><td className="dia-desabilitado">3</td><td className="dia-desabilitado">4</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div className="eventos-sidebar">
+                
+                <div className="sidebar-widget">
+                    <h4>Eventos em Breve:</h4>
+                    <div className="evento-info-box">
+                        <strong>23/12 - Ação de Natal</strong><br />
+                        Local: Av. da Liberdade, 532 - Liberdade, São Paulo - SP, 01502-001
+                    </div>
+                </div>
+                
+                <div className="sidebar-widget">
+                    <h4>Seja notificado sobre nossos próximos eventos e participe!</h4>
+                    <Link to="/inscricao" className="btn btn-red">Me Notifique</Link>
+                </div>
+
+                <div className="sidebar-widget">
+                    <h4>Acomapnhe pelas redes:</h4>
+                    <div className="social-icons">
+                        <a href="https://www.instagram.com/almainstituto_oficial" target="_blank" rel="noopener noreferrer" className="social-icon ig" title="Instagram">IG</a>
+                        <a href="https://www.facebook.com/almainstituto.oficial" target="_blank" rel="noopener noreferrer" className="social-icon fb" title="Facebook">FB</a>
+                        <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" className="social-icon yt" title="YouTube">YT</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div className="bottom-color-bars">
+            <div className="bottom-bar" style={{ backgroundColor: '#f06678' }}></div>
+            <div className="bottom-bar" style={{ backgroundColor: '#ffc9fc' }}></div>
+            <div className="bottom-bar" style={{ backgroundColor: '#64B5F6' }}></div>
+            <div className="bottom-bar" style={{ backgroundColor: '#6efff1' }}></div>
+            <div className="bottom-bar" style={{ backgroundColor: '#f06678' }}></div>
+            <div className="bottom-bar" style={{ backgroundColor: '#ffc9fc' }}></div>
+            <div className="bottom-bar" style={{ backgroundColor: '#64B5F6' }}></div>
+        </div>
+
+      </section>
+
+      <section id="ouvidoria" className="ouvidoria-section">
+        
+        <h2 className="section-title">Ouvidoria</h2>
+        <div className="thin-bar" style={{ backgroundColor: '#6efff1' }}></div>
+
+        <p className="ouvidoria-subtitle">TEM SUGESTÕES? RELATOS? RECLAMAÇÕES?</p>
+        <p className="ouvidoria-subtitle last">FALE CONOSCO! ESTAMOS AQUI PARA TE OUVIR</p>
+
+        <form action="/enviar-ouvidoria" method="POST" className="form-container">
+            
+            <div className="form-col-left">
+                
+                <div className="form-group">
+                    <label htmlFor="form-nome" className="form-label">Nome</label>
+                    <input type="text" id="form-nome" name="nome" className="form-input" required />
+                </div>
+                
+                <div className="form-group">
+                    <label htmlFor="form-email" className="form-label">Email</label>
+                    <input type="email" id="form-email" name="email" className="form-input" required />
+                </div>
+                
+                <div className="form-group">
+                    <label htmlFor="form-telefone" className="form-label">Telefone</label>
+                    <input type="tel" id="form-telefone" name="telefone" className="form-input" />
+                </div>
+                
+                <button type="submit" className="btn btn-red">Enviar</button>
+            </div>
+            
+            <div className="form-col-right">
+                <div className="form-group-textarea">
+                    <label htmlFor="form-mensagem" className="form-label">Escreva aqui:</label>
+                    <textarea id="form-mensagem" name="mensagem" className="form-textarea" required></textarea>
+                </div>
+            </div>
+
+        </form>
+
+        <div className="bottom-color-bars">
+            <div className="bottom-bar" style={{ backgroundColor: '#f06678' }}></div>
+            <div className="bottom-bar" style={{ backgroundColor: '#ffc9fc' }}></div>
+            <div className="bottom-bar" style={{ backgroundColor: '#64B5F6' }}></div>
+            <div className="bottom-bar" style={{ backgroundColor: '#6efff1' }}></div>
+            <div className="bottom-bar" style={{ backgroundColor: '#f06678' }}></div>
+            <div className="bottom-bar" style={{ backgroundColor: '#ffc9fc' }}></div>
+            <div className="bottom-bar" style={{ backgroundColor: '#64B5F6' }}></div>
+        </div>
+
+      </section>
+    </>
+  );
+}
+
+export default HomePage;
