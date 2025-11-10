@@ -1,0 +1,1 @@
+SELECT * FROM vw_documentos_principais;
