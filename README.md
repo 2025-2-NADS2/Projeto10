@@ -6,9 +6,9 @@
 <a href= "https://www.fecap.br/"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhZPrRa89Kma0ZZogxm0pi-tCn_TLKeHGVxywp-LXAFGR3B1DPouAJYHgKZGV0XTEf4AE&usqp=CAU" alt="FECAP - Fundação de Comércio Álvares Penteado" border="0"></a>
 </p>
 
-# Site Instituto Alma
+# Portal Interativo Instituto Alma
 
-## Grupo 10
+## Grupo 10 / Os Três Mosqueteiros
 
 ## Integrantes: <a href="https://www.linkedin.com/in/bianca-morais-655464212/">Bianca Morais</a>, <a href="https://www.linkedin.com/in/victorbarq/">Enzo Mancio</a>, <a href="https://www.linkedin.com/in/murillo-lueders-azeredo-diniz-costa-07638a301/">Murillo Lueders</a>, <a href="https://www.linkedin.com/in/victorbarq/">Pedro Cheles </a>
 
