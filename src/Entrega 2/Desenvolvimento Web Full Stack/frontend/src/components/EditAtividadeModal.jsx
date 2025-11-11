@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
 
-// Componente para editar uma atividade específica
+
 function EditAtividadeModal({ atividadeId, onClose, onSave }) {
-  const { token } = useAuth(); // O token é necessário para o GET e PUT
+  const { token } = useAuth(); 
   
-  // Estados do formulário
+
   const [titulo, setTitulo] = useState('');
   const [descricao, setDescricao] = useState('');
   const [imagem1, setImagem1] = useState(null);
@@ -13,15 +13,15 @@ function EditAtividadeModal({ atividadeId, onClose, onSave }) {
   const [imagem3, setImagem3] = useState(null);
   const [imagem4, setImagem4] = useState(null);
 
-  // Estados de feedback
+
   const [isLoading, setIsLoading] = useState(true);
   const [formError, setFormError] = useState('');
   const [formSuccess, setFormSuccess] = useState('');
   
-  // Imagens antigas (apenas para mostrar o nome/URL)
+
   const [oldImages, setOldImages] = useState({});
 
-  // 1. Buscar os dados da atividade quando o modal abre (GET)
+
   useEffect(() => {
     const fetchAtividade = async () => {
       setIsLoading(true);
@@ -34,7 +34,7 @@ function EditAtividadeModal({ atividadeId, onClose, onSave }) {
       }
 
       try {
-        // Correção de sintaxe e URL
+
         const response = await fetch(`http://localhost:4000/api/atividades/${atividadeId}`, {
           headers: { 
             'Authorization': `Bearer ${token}` 
@@ -49,17 +49,17 @@ function EditAtividadeModal({ atividadeId, onClose, onSave }) {
             const errorJson = JSON.parse(errorText);
             errorMessage = errorJson.message || errorMessage;
           } catch (e) {
-            // Se não for JSON, usamos o status.
+
           }
-          // REMOVIDA A CHAVE EXTRA (linha 52 original)
+
           throw new Error(errorMessage);
         }
         
         const data = await response.json();
-        // Preenche o formulário com os dados do banco
+
         setTitulo(data.titulo);
         setDescricao(data.descricao);
-        // Guarda os nomes dos ficheiros antigos (as URLs já vêm do Controller)
+
         setOldImages({
           img1: data.imagem_url_1,
           img2: data.imagem_url_2,
@@ -80,13 +80,13 @@ function EditAtividadeModal({ atividadeId, onClose, onSave }) {
   }, [atividadeId, token]);
 
 
-  // 2. Função para enviar a ATUALIZAÇÃO (PUT)
+
   const handleUpdateAtividade = async (e) => {
     e.preventDefault();
     setFormError('');
     setFormSuccess('');
     
-    // Verifica se o token existe antes de enviar
+
     if (!token) {
         setFormError('Sessão expirada. Por favor, faça login novamente.');
         return;
@@ -96,17 +96,17 @@ function EditAtividadeModal({ atividadeId, onClose, onSave }) {
     formData.append('titulo', titulo);
     formData.append('descricao', descricao);
     
-    // Anexa os ficheiros NOVOS (se o user selecionou algum)
+    
     if (imagem1) formData.append('imagem_1', imagem1);
     if (imagem2) formData.append('imagem_2', imagem2);
     if (imagem3) formData.append('imagem_3', imagem3);
     if (imagem4) formData.append('imagem_4', imagem4);
 
     try {
-      // Corrigido: USANDO LOCALHOST E CRASES
+      
       const response = await fetch(`http://localhost:4000/api/atividades/${atividadeId}`, {
         method: 'PUT',
-        headers: { 'Authorization': `Bearer ${token}` }, // Headers para autenticação
+        headers: { 'Authorization': `Bearer ${token}` }, 
         body: formData
       });
 

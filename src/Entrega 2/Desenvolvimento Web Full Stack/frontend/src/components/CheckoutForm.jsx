@@ -5,20 +5,20 @@ import {
     useElements
 } from '@stripe/react-stripe-js';
 
-// Componente recebe o clientSecret e o valor da doação como props
+
 const CheckoutForm = ({ clientSecret, amount }) => {
     const stripe = useStripe();
     const elements = useElements();
     const [message, setMessage] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
 
-    // Efeito para tratar o estado de retorno da doação (após Pix ou 3D Secure)
+
     useEffect(() => {
         if (!stripe) {
             return;
         }
         
-        // Verifica o status do PaymentIntent após um redirecionamento 
+    
         const clientSecretParam = new URLSearchParams(window.location.search).get(
             'payment_intent_client_secret'
         );
@@ -45,7 +45,7 @@ const CheckoutForm = ({ clientSecret, amount }) => {
         });
     }, [stripe, clientSecret]);
 
-    // Função que é chamada ao submeter o formulário de pagamento
+
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -56,11 +56,11 @@ const CheckoutForm = ({ clientSecret, amount }) => {
         setIsLoading(true);
         setMessage(null);
 
-        // Confirma o pagamento usando o Client Secret obtido do backend
+  
         const { error } = await stripe.confirmPayment({
             elements,
             confirmParams: {
-                // A URL de retorno para onde o usuário volta após a autenticação (Pix/3DS)
+
                 return_url: window.location.origin + '/doar', 
             },
         });
