@@ -42,12 +42,12 @@ function DashboardHeader() {
       
       <div className="nav-buttons">
         
-        {/* Lógica condicional para o "papel" (role) */}
+   
         {user && user.role === 'admin' && (
           <Link to="/admin" className="btn btn-secondary btn-admin">Administração</Link>
         )}
 
-        {/* Botão de Sair */}
+
         <button onClick={handleLogout} className="btn btn-logout">Sair</button>
       </div>
     </header>
