@@ -1,9 +1,7 @@
-// 1. Importa a conexão com o banco de dados
 const db = require('../config/db.js');
 const fs = require('fs');
 const path = require('path');
 
-// --- Funções Utilitárias (PARA DELETAR ARQUIVOS) ---
 const deleteFile = (filename) => {
   const localPath = path.resolve(__dirname, '..', 'uploads', filename);
   fs.unlink(localPath, (unlinkErr) => {
@@ -21,10 +19,8 @@ const deleteUploadedFilesOnError = (files) => {
   if (files['imagem_4']) filenames.push(files['imagem_4'][0].filename);
   filenames.forEach(filename => deleteFile(filename));
 };
-// --- Fim das Funções Utilitárias ---
 
 
-// --- (Público) LER TODAS as Atividades ---
 exports.getAtividades = (req, res) => {
   const sql = "SELECT * FROM atividades ORDER BY id DESC LIMIT 4";
   db.query(sql, (err, results) => {
@@ -33,7 +29,7 @@ exports.getAtividades = (req, res) => {
   });
 };
 
-// --- (Admin) LER UMA Atividade (para Edição) ---
+
 exports.getAtividadeById = (req, res) => {
   const { id } = req.params;
   const sql = "SELECT * FROM atividades WHERE id = ?";
@@ -56,7 +52,7 @@ exports.getAtividadeById = (req, res) => {
   });
 };
 
-// --- (Admin) CRIAR uma Atividade ---
+
 exports.createAtividade = (req, res) => { // <<< ESSA FUNÇÃO ESTAVA FALTANDO!
   try {
     const checkSql = "SELECT COUNT(*) AS total FROM atividades";
@@ -97,7 +93,7 @@ exports.createAtividade = (req, res) => { // <<< ESSA FUNÇÃO ESTAVA FALTANDO!
   }
 };
 
-// --- (Admin) ATUALIZAR uma Atividade (Editar) ---
+
 exports.updateAtividade = (req, res) => { // <<< ESSA FUNÇÃO ESTAVA FALTANDO!
   try {
     const { id } = req.params;
@@ -157,7 +153,6 @@ exports.updateAtividade = (req, res) => { // <<< ESSA FUNÇÃO ESTAVA FALTANDO!
 };
 
 
-// --- (Admin) DELETAR uma Atividade ---
 exports.deleteAtividade = (req, res) => { // <<< ESSA FUNÇÃO ESTAVA FALTANDO!
   try {
     const { id } = req.params;
