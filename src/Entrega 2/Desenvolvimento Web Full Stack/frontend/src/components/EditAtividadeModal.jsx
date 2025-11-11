@@ -3,7 +3,7 @@ import { useAuth } from '../context/AuthContext';
 
 
 function EditAtividadeModal({ atividadeId, onClose, onSave }) {
-  const { token } = useAuth(); // O token é necessário para o GET e PUT
+  const { token } = useAuth(); 
   
 
   const [titulo, setTitulo] = useState('');
@@ -106,7 +106,7 @@ function EditAtividadeModal({ atividadeId, onClose, onSave }) {
       
       const response = await fetch(`http://localhost:4000/api/atividades/${atividadeId}`, {
         method: 'PUT',
-        headers: { 'Authorization': `Bearer ${token}` }, // Headers para autenticação
+        headers: { 'Authorization': `Bearer ${token}` }, 
         body: formData
       });
 
