@@ -1,22 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
 
-// Este componente é para editar Metas
+
 function EditMetaModal({ metaId, onClose, onSave }) {
   const { token } = useAuth(); // O token é necessário
   
-  // Estados do formulário (Exemplo para Metas)
+
   const [titulo, setTitulo] = useState('');
   const [descricao, setDescricao] = useState('');
   const [valor, setValor] = useState(0);
   const [prazo, setPrazo] = useState('');
 
-  // Estados de feedback
+
   const [isLoading, setIsLoading] = useState(true);
   const [formError, setFormError] = useState('');
   const [formSuccess, setFormSuccess] = useState('');
-  
-  // 1. Buscar os dados da meta quando o modal abre (GET)
+
   useEffect(() => {
     const fetchMeta = async () => {
       setIsLoading(true);
@@ -29,7 +28,7 @@ function EditMetaModal({ metaId, onClose, onSave }) {
       }
 
       try {
-        // Corrigido: usando crases e endpoint correto
+
         const response = await fetch(`http://localhost:4000/api/metas/${metaId}`, {
           headers: { 
             'Authorization': `Bearer ${token}` 
@@ -44,13 +43,13 @@ function EditMetaModal({ metaId, onClose, onSave }) {
             const errorJson = JSON.parse(errorText);
             errorMessage = errorJson.message || errorMessage;
           } catch (e) {
-            // Se não for JSON, usamos o status.
+         
           }
           throw new Error(errorMessage);
         }
         
         const data = await response.json();
-        // Preenche o formulário com os dados do banco
+
         setTitulo(data.titulo);
         setDescricao(data.descricao);
         setValor(data.valor);
@@ -69,13 +68,12 @@ function EditMetaModal({ metaId, onClose, onSave }) {
   }, [metaId, token]);
 
 
-  // 2. Função para enviar a ATUALIZAÇÃO (PUT)
   const handleUpdateMeta = async (e) => {
     e.preventDefault();
     setFormError('');
     setFormSuccess('');
     
-    // Verifica se o token existe antes de enviar
+   
     if (!token) {
       setFormError('Sessão expirada. Por favor, faça login novamente.');
       return;
