@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 
-// 'onClose' é uma função que receberemos da HomePage
+
 function EventModal({ onClose }) {
-  // --- ESTADOS (Obrigatórios para o formulário) ---
+
   const [nome, setNome] = useState('');
   const [email, setEmail] = useState('');
   const [isEnviado, setIsEnviado] = useState(false);
   const [formMessage, setFormMessage] = useState('');
 
-  // --- (ATUALIZADO) AGORA CHAMA A API REAL ---
+
   const handleSubmit = async (e) => {
     e.preventDefault(); 
     setFormMessage('');
@@ -22,51 +22,49 @@ function EventModal({ onClose }) {
         body: JSON.stringify({ nome, email }),
       });
       
-      // Tenta ler o corpo JSON, mas não falha se estiver vazio
+ 
       let data = {};
       try {
           data = await response.json();
       } catch (jsonError) {
-          // Se falhar a leitura (porque o corpo está vazio), 
-          // usaremos uma mensagem padrão se o status for 2xx.
+         
           data.message = 'Inscrição realizada com sucesso! Avisaremos sobre novos eventos.';
       }
 
       if (!response.ok) {
-        // Se a API der um erro (ex: 400, 409, 500)
+       
         throw new Error(data.message || 'Erro ao enviar inscrição.');
       }
 
-      // 2. SUCESSO!
+     
       setIsEnviado(true);
-      // Usa a mensagem lida ou a mensagem padrão de sucesso.
+     
       setFormMessage(data.message); 
 
-      // Limpa os campos após o sucesso
+      
       setNome('');
       setEmail('');
 
-      // Fecha o modal após 3 segundos
+     
       setTimeout(() => {
         onClose();
       }, 3000);
 
     } catch (error) {
       console.error('Erro no formulário do modal:', error);
-      // Mostra o erro 
+ 
       setFormMessage(error.message);
       setIsEnviado(true); 
     }
   };
   
-  // --- JSX (O que aparece na tela) ---
+ 
   return (
     <div className="modal-overlay" onClick={onClose}>
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
         
         <button className="modal-close-btn" onClick={onClose}>&times;</button>
         
-        {/* Se NÃO foi enviado, mostre o formulário */}
         {!isEnviado ? (
           <>
             <h2>Seja Notificado!</h2>
