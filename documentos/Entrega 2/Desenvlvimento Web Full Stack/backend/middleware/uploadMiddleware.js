@@ -3,13 +3,13 @@ const path = require('path');
 
 
 const storage = multer.diskStorage({
-  // Define a pasta de destino
+  
   destination: (req, file, cb) => {
     cb(null, 'uploads/'); 
   },
  
   filename: (req, file, cb) => {
-    // Cria um nome de ficheiro único
+    
     const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
     cb(null, uniqueSuffix + path.extname(file.originalname));
   }
