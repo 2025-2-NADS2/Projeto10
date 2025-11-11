@@ -1,6 +1,6 @@
 const db = require('../config/db.js');
 
-// --- (Público) CRIAR uma Inscrição ---
+
 exports.createInscricao = (req, res) => {
   try {
     console.log('--- REQUISIÇÃO POST /api/inscricoes RECEBIDA ---'); // <--- LOG DE DEBUG
@@ -12,7 +12,7 @@ exports.createInscricao = (req, res) => {
       return res.status(400).json({ message: 'Nome e Email são obrigatórios.' });
     }
 
-    // 1. Verificar se o email JÁ existe
+   
     const checkSql = "SELECT * FROM inscricoes_eventos WHERE email = ?";
     db.query(checkSql, [email], function (err, results) {
         if (err) {
@@ -20,12 +20,12 @@ exports.createInscricao = (req, res) => {
           return res.status(500).json({ message: 'Erro de servidor ao verificar email.' });
         }
 
-        // 2. Se o email já existe, apenas avise
+        
         if (results.length > 0) {
           return res.status(409).json({ message: 'Este email já está cadastrado para receber notificações!' });
         }
 
-        // 3. Se não existe, insira (Com data)
+        
         const insertSql = "INSERT INTO inscricoes_eventos (nome, email, data_inscricao) VALUES (?, ?, NOW())";
         db.query(insertSql, [nome, email], (err, result) => {
           if (err) {
@@ -42,7 +42,7 @@ exports.createInscricao = (req, res) => {
   }
 };
 
-// --- (Admin) LER TODAS as Inscrições ---
+
 exports.getInscricoes = (req, res) => {
   try {
     console.log('--- REQUISIÇÃO GET /api/inscricoes RECEBIDA (ADMIN) ---'); // <--- LOG DE DEBUG
