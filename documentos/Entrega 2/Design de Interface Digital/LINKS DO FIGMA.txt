@@ -1,9 +1,3 @@
-LINKS
+Projeto Navegável Figma
 
-Guia de Estilo
-
-https://www.figma.com/slides/35ObcnHl2PQuxb36jIU4H4/Guia-de-Estilo-%7C-Grupo-10?node-id=5-473&t=6HwUaCGPE1SleUeV-1
-
-Home Page 
-
-https://www.figma.com/design/cmlDcWygsM4WNW3AmrarnL/Home-Page---Instituto-Alma?node-id=0-1&t=eMYsbQTGEMwdbRe5-1
+https://www.figma.com/design/v9uvXY05uI3IbYDjA7aHVg/ENTREGA-2?node-id=0-1&t=CihsQb11Mz73jEbB-1
