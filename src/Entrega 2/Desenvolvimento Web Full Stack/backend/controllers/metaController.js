@@ -1,6 +1,6 @@
 const db = require('../config/db.js');
 
-// --- (Público) LER TODAS as Metas ---
+
 exports.getMetas = (req, res) => {
   const sql = "SELECT * FROM metas ORDER BY id DESC LIMIT 4"; // Limite de 4 metas
   db.query(sql, (err, results) => {
@@ -9,7 +9,7 @@ exports.getMetas = (req, res) => {
   });
 };
 
-// --- (Admin) LER UMA Meta (para o Modal de Edição) ---
+
 exports.getOneMeta = (req, res) => {
   const { id } = req.params;
   const sql = "SELECT * FROM metas WHERE id = ?";
@@ -20,7 +20,7 @@ exports.getOneMeta = (req, res) => {
   });
 };
 
-// --- (Admin) CRIAR uma Meta ---
+
 exports.createMeta = (req, res) => {
   try {
     const { titulo, valor_meta } = req.body;
@@ -44,11 +44,11 @@ exports.createMeta = (req, res) => {
   }
 };
 
-// --- (Admin) ATUALIZAR uma Meta (Editar) ---
+
 exports.updateMeta = (req, res) => {
   try {
     const { id } = req.params;
-    // O Admin pode atualizar os 3 campos no modal de edição
+    
     const { titulo, valor_meta, valor_atual } = req.body;
 
     if (!titulo || !valor_meta || valor_atual === undefined) {
@@ -73,7 +73,7 @@ exports.updateMeta = (req, res) => {
   }
 };
 
-// --- (Admin) DELETAR uma Meta ---
+
 exports.deleteMeta = (req, res) => {
   try {
     const { id } = req.params;

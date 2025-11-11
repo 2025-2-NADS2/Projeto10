@@ -1,10 +1,9 @@
 const db = require('../config/db.js');
 
-// --- (Público) LER TODOS os Eventos ---
-// (Chamado pela HomePage)
+
 exports.getEventos = (req, res) => {
   try {
-    // Vamos pegar eventos futuros, ordenados pelo mais próximo
+    
     const sql = "SELECT id, titulo, descricao, DATE_FORMAT(data_evento, '%d/%m/%Y') AS data_formatada, local FROM eventos WHERE data_evento >= CURDATE() ORDER BY data_evento ASC";
     
     db.query(sql, (err, results) => {
@@ -19,8 +18,7 @@ exports.getEventos = (req, res) => {
   }
 };
 
-// --- (Admin) CRIAR um Evento ---
-// (Chamado pela AdminPage)
+
 exports.createEvento = (req, res) => {
   try {
     const { titulo, descricao, data_evento, local } = req.body;
@@ -45,8 +43,7 @@ exports.createEvento = (req, res) => {
   }
 };
 
-// --- (Admin) DELETAR um Evento ---
-// (Chamado pela AdminPage)
+
 exports.deleteEvento = (req, res) => {
   try {
     // O :id virá da URL (ex: /api/eventos/5)

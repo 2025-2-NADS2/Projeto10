@@ -1,17 +1,14 @@
-// paymentController.js
-
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 const db = require('../config/db'); 
 
-// Chave do Webhook (corrigida com aspas, mas idealmente deve vir do .env)
+
 const endpointSecret = 'whsec_c4a4c0c4154ff917860dbd2b59b170f61aed74338bcd4679f578a8a532d0f647'; 
 
-// --- 1. Lógica para criar a intenção de pagamento ---
+
 const createPaymentIntent = async (req, res) => {
-    // Recebe o valor (amount) do frontend
+
     const { amount } = req.body; 
-    
-    // Converte reais para centavos (ex: R$ 10.00 -> 1000)
+   
     const amountInCents = Math.round(parseFloat(amount) * 100); 
 
     if (!amountInCents || amountInCents < 50) {
@@ -24,11 +21,11 @@ const createPaymentIntent = async (req, res) => {
     let donationId = null; 
 
     try {
-        // 1. Cria o PaymentIntent no Stripe
+      
         const paymentIntent = await stripe.paymentIntents.create({
             amount: amountInCents, 
             currency: 'brl', 
-            // Permite Pix e Cartão, o Stripe gerencia a confirmação no frontend
+            
             automatic_payment_methods: { 
                 enabled: true, 
             },
@@ -38,17 +35,17 @@ const createPaymentIntent = async (req, res) => {
             },
         });
 
-        // 2. Insere o registro inicial no banco de dados (status 'pendente')
+        
         const initialStatus = 'pendente';
         
-        // Assumindo que db.query retorna um objeto com a propriedade insertId:
+        
         const [result] = await db.query(
             "INSERT INTO doacoes (stripe_id, valor_reais, status_doacao, criado_em) VALUES (?, ?, ?, NOW())", 
             [paymentIntent.id, amount, initialStatus]
         );
         donationId = result.insertId; 
 
-        // 3. Retorna o clientSecret para o frontend (necessário para o CheckoutForm)
+       
         return res.json({ 
             success: true, 
             clientSecret: paymentIntent.client_secret,
@@ -78,13 +75,13 @@ const createPaymentIntent = async (req, res) => {
 };
 
 
-// --- 2. Lógica do Stripe Webhook ---
+
 const processStripeWebhook = async (req, res) => {
     // req.headers['stripe-signature'] contém a assinatura de segurança do Stripe
     const sig = req.headers['stripe-signature'];
     let event;
 
-    // 1. VERIFICAÇÃO DE SEGURANÇA
+    
     try {
         // Usa req.rawBody que foi populado no server.js
         event = stripe.webhooks.constructEvent(req.rawBody, sig, endpointSecret);
@@ -93,7 +90,7 @@ const processStripeWebhook = async (req, res) => {
         return res.status(400).send(`Webhook Error: ${err.message}`);
     }
 
-    // 2. PROCESSAMENTO DO EVENTO
+   
     const paymentIntent = event.data.object;
     
     switch (event.type) {
@@ -118,7 +115,7 @@ const processStripeWebhook = async (req, res) => {
                     "UPDATE doacoes SET status_doacao = ? WHERE stripe_id = ?", 
                     [statusFalhou, paymentIntent.id]
                 );
-                console.log(`❌ Doação falhou e DB atualizado: ${paymentIntent.id}`);
+                console.log(` Doação falhou e DB atualizado: ${paymentIntent.id}`);
             } catch (dbError) {
                 console.error(`Erro ao atualizar DB na falha: ${dbError}`);
             }
@@ -128,7 +125,7 @@ const processStripeWebhook = async (req, res) => {
             console.log(`Evento Stripe ignorado: ${event.type}`);
     }
 
-    // 3. Retorna resposta 200 OK para o Stripe
+
     res.json({ received: true });
 };
 
