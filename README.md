@@ -8,7 +8,7 @@
 [![Stack](https://img.shields.io/badge/Stack-Fullstack-red)](url-do-seu-projeto)
 
 
-## Integrantes: <a href="https://www.linkedin.com/in/bianca-morais-655464212">Bianca Ferreira Morais </a>, Enzo Mancio, <a href="https://www.linkedin.com/in/pedro-cheles-lopes-42b783224/)"> Pedro Cheles Lopes </a>, <a href="https://www.linkedin.com/in/murillo-lueders-azeredo-diniz-costa-07638a301/">Murillo Lueders Azeredo 
+## Integrantes: <a href="https://www.linkedin.com/in/bianca-morais-655464212">Bianca Ferreira Morais </a>, <a href=https://www.linkedin.com/in/enzo-vaz-877b0b26b/>Enzo Mancio Vaz</a>, <a href="https://www.linkedin.com/in/pedro-cheles-lopes-42b783224/)"> Pedro Cheles Lopes </a>, <a href="https://www.linkedin.com/in/murillo-lueders-azeredo-diniz-costa-07638a301/">Murillo Lueders Azeredo 
 
 ## Professores Orientadores: <a href="https://www.linkedin.com/in/francisco-escobar/">Francisco Escobar </a>, <a href="https://www.linkedin.com/in/victorbarq/">Victor Quiroz</a>, <a href="https://www.linkedin.com/in/jbuesso/">José Carlos, <a href="https://www.linkedin.com/in/ronaldo-araujo-pinto-3542811a/">Ronaldo Araujo Pinto, <a href="https://www.linkedin.com/in/eduardo-savino-gomes-77833a10//">Eduardo Savino Gomes
 ## Descrição
