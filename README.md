@@ -69,3 +69,41 @@ Para rodar o projeto em seu ambiente de desenvolvimento local (`localhost`), voc
 
 ### 1. Estrutura de Pastas (Fullstack)
 O projeto adota uma estrutura modularizada, separando claramente o Frontend do Backend:
+
+Raiz/
+|
+|--> documentos/
+|   |--> antigos/                 
+|   |   |
+|   |--> Documentação.docx      
+|
+|--> executáveis/
+|   |--> windows/                
+|   |--> android/                
+|   |--> HTML/                  
+|
+|--> imagens/                   
+|
+|--> src/                        
+|   |
+|   |--> Backend/              
+|   |   |--> node_modules/       
+|   |   |--> config/             
+|   |   |--> routes/            
+|   |   |--> controllers/       
+|   |   |--> models/             
+|   |   |--> server.js (ou index.js) 
+|   |   |--> package.json
+|   |   |
+|   |--> Frontend/             
+|   |   |--> node_modules/      
+|   |   |--> public/           
+|   |   |--> src/                
+|   |   |   |--> assets/         
+|   |   |   |--> components/
+|   |   |   |--> pages/
+|   |   |   |--> App.js
+|   |   |--> package.json
+|
+|--> .gitignore                  
+|--> readme.md                  
