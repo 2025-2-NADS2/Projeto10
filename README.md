@@ -7,6 +7,12 @@
 [![Licença](https://img.shields.io/badge/Licença-CC%20BY%204.0-green)](./LICENSE.md)
 [![Stack](https://img.shields.io/badge/Stack-Fullstack-red)](url-do-seu-projeto)
 
+
+## Integrantes: <a href="https://www.linkedin.com/in/bianca-morais-655464212">Bianca Ferreira Morais </a>, <a href="https://www.linkedin.com/in/pedro-cheles-lopes-42b783224/)"> Pedro Cheles Lopes </a>, <a href="https://github.com/RodrigoWasTaken">Rodrigo José Lima do Monte 
+
+## Professores Orientadores: <a href="https://www.linkedin.com/in/lucymari/">Lucy Mari Tabuti </a>, <a href="https://www.linkedin.com/in/victorbarq/">Victor Quiroz</a>, <a href="https://www.linkedin.com/in/aimarlopes/">Aimar Martins Lopes, <a href="https://www.linkedin.com/in/ronaldo-araujo-pinto-3542811a/">Ronaldo Araujo Pinto, <a href="https://www.linkedin.com/in/remuniz/">Renata Muniz do Nascimento, <a href="https://www.linkedin.com/in/eduardo-savino-gomes-77833a10//">Eduardo Savino Gomes
+## Descrição
+
 ---
 
 ## 📝 Sobre o Projeto: Introdução e Propósito
