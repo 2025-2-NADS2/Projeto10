@@ -1,7 +1,7 @@
 # 💻 Portal Interativo Instituto Alma 💚
 
 ## 🎓 TCC FECAP | Grupo 10: Os Três Mosqueteiros
-### **Soulware** (Nome Fantasia Sugerido - para manter a identidade anterior)
+
 
 [![Status](https://img.shields.io/badge/Status-Em%20Desenvolvimento-blue)](url-do-seu-projeto)
 [![Licença](https://img.shields.io/badge/Licença-CC%20BY%204.0-green)](./LICENSE.md)
