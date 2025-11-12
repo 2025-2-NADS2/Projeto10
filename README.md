@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # 💻 Portal Interativo Instituto Alma 💚
 
 ## 🎓 Portal Interativo - Instituto Alma | Grupo 10: Os Três Mosqueteiros
