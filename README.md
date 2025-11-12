@@ -1,6 +1,6 @@
 # 💻 Portal Interativo Instituto Alma 💚
 
-## 🎓 TCC FECAP | Grupo 10: Os Três Mosqueteiros
+## 🎓 Portal Interativo - Instituto Alma | Grupo 10: Os Três Mosqueteiros
 
 
 [![Status](https://img.shields.io/badge/Status-Em%20Desenvolvimento-blue)](url-do-seu-projeto)
